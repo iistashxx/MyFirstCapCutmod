@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Подслушано 6-х классов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#06040d;--text:#e9e5ff;--muted:#8f88b8;--line:rgba(255,255,255,.13);--p:#ff3fd8;--c:#22f0ff;--v:#9b6bff;--cp:#ffe3f9;--cc:#dcfdff;--hp:#ff3fd8;--hc:#22f0ff;--hv:rgba(155,107,255,.22);--btn:#06040d;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6f3ff;--text:#150e35;--muted:#5f5885;--line:rgba(21,14,53,.16);--p:#c0129d;--c:#0a7f8f;--v:#6b3df0;--cp:#c0129d;--cc:#0a7f8f;--hp:transparent;--hc:transparent;--hv:rgba(107,61,240,.1);--btn:#fff;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f6f3ff;--text:#150e35;--muted:#5f5885;--line:rgba(21,14,53,.16);--p:#c0129d;--c:#0a7f8f;--v:#6b3df0;--cp:#c0129d;--cc:#0a7f8f;--hp:transparent;--hc:transparent;--hv:rgba(107,61,240,.1);--btn:#fff;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font:400 17px/1.65 'Manrope',system-ui,sans-serif;color:var(--text);background:var(--bg);overflow-x:clip}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(520px circle at var(--x,50%) var(--y,20%),var(--hv),transparent 70%)}
+h1,h2,h3,.btn,.logo{font-family:'Unbounded','Arial',system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--c);outline-offset:4px}
+.wrap{position:relative;max-width:1000px;margin:0 auto;padding:0 22px}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-weight:300;font-size:14px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--hc),0 0 22px var(--hc)}
+.btn{display:inline-block;font-weight:500;font-size:14px;text-decoration:none;color:var(--text);padding:15px 30px;border:1px solid var(--p);border-radius:999px;background:transparent;box-shadow:0 0 14px -2px var(--hp),inset 0 0 14px -6px var(--hp);transition:background .2s,color .2s,box-shadow .2s;cursor:pointer}
+.btn:hover{background:var(--p);color:var(--btn);box-shadow:0 0 30px 2px var(--hp),0 0 80px var(--hp)}
+.btn.sm{padding:9px 20px;font-size:12px}
+.link{color:var(--muted);text-underline-offset:6px}
+.link:hover{color:var(--text)}
+
+.hero{min-height:82svh;min-height:82vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 0 70px}
+h1{font-weight:300;line-height:1.05;margin-bottom:30px}
+h1 span{display:block}
+.a{font-size:clamp(2.2rem,10.4vw,6.4rem);color:var(--cp);text-shadow:0 0 6px var(--hp),0 0 24px var(--hp),0 0 70px var(--hp);animation:flick 2.4s .2s both}
+.b{margin-top:14px;font-size:clamp(1.1rem,4.6vw,2.3rem);letter-spacing:.08em;color:var(--cc);text-shadow:0 0 6px var(--hc),0 0 24px var(--hc)}
+.lead{max-width:30em;color:var(--muted);margin-bottom:34px}
+.cta{display:flex;flex-wrap:wrap;gap:22px 30px;align-items:center;justify-content:center}
+@keyframes flick{0%,18%,22%,56%{opacity:.25}20%,24%,54%,100%{opacity:1}30%{opacity:.6}40%{opacity:.35}45%{opacity:1}}
+
+.say{margin-top:56px;min-height:3.6em;max-width:30em;display:flex;align-items:center;justify-content:center;padding:12px 24px;border:1px solid var(--line);border-radius:22px;color:var(--muted);font-size:15px;transition:opacity .5s}
+.say.off{opacity:0}
+
+section.sec{padding:80px 0}
+h2{font-weight:300;font-size:clamp(1.5rem,5vw,2.6rem);line-height:1.2;margin-bottom:14px;max-width:16em}
+.sub{color:var(--muted);margin-bottom:48px}
+.why{display:grid;gap:36px 32px}
+.it{--k:var(--p);border-top:1px solid var(--k);box-shadow:0 -10px 22px -16px var(--k);padding-top:18px}
+.it:nth-child(3n+2){--k:var(--c)}.it:nth-child(3n){--k:var(--v)}
+.it h3{display:flex;align-items:center;gap:12px;font-weight:500;font-size:16px;margin-bottom:8px}
+.it h3::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--k);box-shadow:0 0 10px var(--k),0 0 20px var(--k)}
+.it p{color:var(--muted);font-size:16px}
+@media(min-width:760px){.why{grid-template-columns:repeat(3,1fr)}}
+
+.steps{display:grid;gap:32px;list-style:none;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:18px;align-items:flex-start}
+.steps li::before{content:counter(s);flex:none;width:42px;height:42px;display:grid;place-items:center;font:300 16px 'Unbounded',sans-serif;color:var(--c);border:1px solid var(--c);border-radius:50%;box-shadow:0 0 14px -2px var(--hc),inset 0 0 12px -6px var(--hc)}
+.steps h3{font-weight:500;font-size:16px;margin-bottom:4px}
+.steps p{color:var(--muted);font-size:16px}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.rules{margin-top:56px;color:var(--muted);font-size:15px;max-width:36em}
+
+.final{text-align:center;padding:64px 22px;border:1px solid var(--v);border-radius:28px;box-shadow:0 0 40px -12px var(--v),inset 0 0 40px -22px var(--v)}
+.final h2{margin:0 auto 12px}
+.final p{color:var(--muted);margin:0 auto 30px;max-width:26em}
+footer{padding:50px 0 56px;text-align:center;color:var(--muted);font-size:14px}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:99}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#top">подслушано 6‑х</a>
+    <a class="btn sm" data-join>Вступить</a>
+  </nav>
+
+  <header class="hero" id="top">
+    <h1><span class="a">Подслушано</span><span class="b">6‑х классов</span></h1>
+    <p class="lead">Анонимные истории, новости с переменок, мемы и опросы. Всё про нашу параллель в одном месте.</p>
+    <div class="cta">
+      <a class="btn" data-join>Вступить в Telegram</a>
+      <a class="link" href="#why">Почему мы?</a>
+    </div>
+    <div class="say" id="say" aria-live="off"></div>
+  </header>
+
+  <section class="sec" id="why">
+    <h2>Почему именно наше подслушано?</h2>
+    <p class="sub">Подслушано в школе много. Вот чем наше лучше.</p>
+    <div class="why">
+      <div class="it"><h3>Полная анонимность</h3><p>Мы не раскрываем, кто прислал историю. Имя остаётся секретом.</p></div>
+      <div class="it"><h3>Быстро</h3><p>Свежие истории выходят, пока тема ещё горячая.</p></div>
+      <div class="it"><h3>Без буллинга</h3><p>Оскорбления и личные данные не публикуем. Смеёмся вместе, а не над кем-то.</p></div>
+      <div class="it"><h3>Только 6‑е классы</h3><p>Свои темы, свои шутки, никаких скучных взрослых.</p></div>
+      <div class="it"><h3>Новости с переменок</h3><p>Что перенесли, что задали, что происходит. Ты узнаёшь первым.</p></div>
+      <div class="it"><h3>Мемы и опросы</h3><p>Голосуем, угадываем, спорим. Скучно не бывает.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="join">
+    <h2>Как вступить</h2>
+    <p class="sub">Меньше минуты.</p>
+    <ol class="steps">
+      <li><div><h3>Нажми «Вступить»</h3><p>Откроется наша ссылка в Telegram.</p></div></li>
+      <li><div><h3>Подпишись</h3><p>Нажми «Join», и ты уже в ленте.</p></div></li>
+      <li><div><h3>Читай и присылай</h3><p>Делись историями и зови одноклассников.</p></div></li>
+    </ol>
+    <p class="rules">Правила простые: уважай всех, без оскорблений, без личных данных, без спама.</p>
+  </section>
+
+  <section class="sec">
+    <div class="final">
+      <h2>Ну что, залетаешь?</h2>
+      <p>Всё самое интересное про 6‑е классы уже ждёт тебя в Telegram.</p>
+      <a class="btn" data-join>Вступить в Telegram</a>
+    </div>
+  </section>
+
+  <footer>Подслушано 6‑х классов. Неофициальное сообщество школьников.</footer>
+</div>
+<canvas id="fx"></canvas>
+
+<script>
+const LINK='https://t.me/+X22uvbzGW9VlYzRh';
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+/* rotating overheard lines */
+const msgs=['«Кто знает, правда ли, что завтра сокращённые уроки?»','«Спасибо тому, кто вернул мой пенал. Ты лучший»','«Предлагаю устроить в классе день пижам»','«Админ, сделай опрос: какая булочка в столовой лучшая?»'];
+const say=document.getElementById('say');let mi=0;say.textContent=msgs[0];
+if(!RM)setInterval(()=>{say.classList.add('off');setTimeout(()=>{mi=(mi+1)%msgs.length;say.textContent=msgs[mi];say.classList.remove('off')},500)},4200);
+/* cursor glow */
+addEventListener('pointermove',e=>{const s=document.body.style;s.setProperty('--x',e.clientX+'px');s.setProperty('--y',e.clientY+'px')});
+/* neon sparks */
+const cv=document.getElementById('fx'),cx=cv.getContext('2d');let ps=[],run=false;
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener('resize',size);
+function boom(x,y){
+  if(RM)return;
+  const cols=['#ff3fd8','#22f0ff','#9b6bff','#ffffff'];
+  for(let i=0;i<70;i++){const a=Math.random()*6.283,s=3+Math.random()*8;
+    ps.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-2,r:1.5+Math.random()*2.5,c:cols[i%4],l:55+Math.random()*35});}
+  if(!run){run=true;requestAnimationFrame(tick)}
+}
+function tick(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  ps=ps.filter(p=>p.l>0);
+  for(const p of ps){p.x+=p.vx;p.y+=p.vy;p.vy+=.18;p.vx*=.97;p.l--;
+    cx.globalAlpha=Math.min(1,p.l/25);cx.fillStyle=p.c;cx.shadowColor=p.c;cx.shadowBlur=14;
+    cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();}
+  if(ps.length)requestAnimationFrame(tick);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}
+}
+document.querySelectorAll('[data-join]').forEach(a=>{
+  a.href=LINK;a.target='_blank';a.rel='noopener noreferrer';
+  a.addEventListener('click',e=>boom(e.clientX,e.clientY));
+});
+</script>
+</body>
+</html>
